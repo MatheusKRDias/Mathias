@@ -18,7 +18,7 @@ function AdcProdinho() {
 }
 
 function DelProd($id) {
-    alert(DeletarProduto($CodProduto));
+    DeletarProduto($CodProduto);
     redirecionar("produto/index");
 }
 
