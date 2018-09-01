@@ -13,12 +13,12 @@
     </thead>
     <?php foreach ($usuarios as $usuario): ?>
     <tr>
-        <td><?=$usuario['id']?></td>
-        <td><?=$usuario['nome']?></td>
-        <td><?=$usuario['email']?></td>
-        <td><a href="./usuario/visualizar/<?=$usuario['id']?>" class="btn btn-secondary">view</a></td>
-        <td><a href="./usuario/editar/<?=$usuario['id']?>" class="btn btn-info">edit</a></td>
-        <td><a href="./usuario/deletar/<?=$usuario['id']?>" class="btn btn-danger">del</a></td>
+        <td><?=$usuario['IdUsuario']?></td>
+        <td><?=$usuario['NomeUsuario']?></td>
+        <td><?=$usuario['Email']?></td>
+        <td><a href="./usuario/visualizar/<?=$usuario['IdUsuario']?>" class="btn btn-secondary">view</a></td>
+        <td><a href="./usuario/editar/<?=$usuario['IdUsuario']?>" class="btn btn-info">edit</a></td>
+        <td><a href="./usuario/deletar/<?=$usuario['IdUsuario']?>" class="btn btn-danger">del</a></td>
     </tr>
     <?php endforeach; ?>
 </table>

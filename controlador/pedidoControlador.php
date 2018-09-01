@@ -1,6 +1,6 @@
 <?php
 
-require "modelo/produtoModelo.php";
+require "modelo/pedidoModelo.php";
 
 function index() {
     $dados["produtos"] = pegarTodosProdutos();

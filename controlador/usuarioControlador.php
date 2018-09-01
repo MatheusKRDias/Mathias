@@ -10,7 +10,7 @@ function index() {
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
-        alert(adicionarUsuario($nome, $email, $sexo));
+        alert(adicionarUsuario($nome, $email, $senha));
         redirecionar("usuario/index");
     } else {
         exibir("usuario/formulario");

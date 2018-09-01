@@ -15,7 +15,8 @@ table, tr, th, td {
 }
 
 nav ul {
-    background-color: dodgerblue;
+    background-color: black;
+    text-align: center;
     padding: 12px;
 }
 nav ul li {
@@ -25,7 +26,8 @@ nav ul li {
 
 nav ul li a {
     color: white;
-    padding: 0 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 20px;
 }
 
 main {
