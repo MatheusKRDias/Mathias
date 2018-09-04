@@ -2,26 +2,29 @@
 
 require "modelo/pedidoModelo.php";
 
+/** anon */
 function index() {
-    $dados["produtos"] = pegarTodosProdutos();
-    exibir("produto/listar", $dados);
+    $dados["pedidos"] = pegarTodosProdutos();
+    exibir("pedido/listar", $dados);
 }
-
+/** anon */
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
-        alert(adicionarProduto($nome, $descricao, $preco));
-        redirecionar("produto/index");
+        alert(adicionarPedido($nome, $descricao, $preco));
+        redirecionar("pedido/index");
     } else {
-        exibir("produto/formulario");
+        exibir("pedido/formulario");
     }
 }
 
+/** anon */
 function deletar($id) {
     alert(deletarProduto($id));
     redirecionar("produto/index");
 }
 
+/** anon */
 function editar($id) {
     if (ehPost()) {
         $NomeProd = $_POST["nome"];
@@ -35,6 +38,7 @@ function editar($id) {
         exibir("produto/formulario", $dados);
     }
 }
+/**admin*/
 
 function visualizar($id) {
     $dados['produto'] = pegarProdutoPorId($id);

@@ -1,5 +1,7 @@
 <h2>Listar Produtos</h2>
 
+
+
 <table class="table">
     <thead>
         <tr>
@@ -25,6 +27,10 @@
     <?php endforeach; ?>
 </table>
 
+</br>
 
 <a href="./produto/adicionar" class="btn btn-primary">Adicionar novo produto</a>
+
+<p>Se voce nao eh cadastrado, se cadastre atraves do link <a href="./usuario/adicionar">Cadastre-se</a></p>
+
 
