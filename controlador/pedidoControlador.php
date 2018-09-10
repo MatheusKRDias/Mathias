@@ -1,13 +1,12 @@
 <?php
 
 require "modelo/pedidoModelo.php";
-
-/** anon */
+/** user */
 function index() {
-    $dados["pedidos"] = pegarTodosProdutos();
+    $dados["pedidos"] = pegarTodosPedidos();
     exibir("pedido/listar", $dados);
 }
-/** anon */
+/** user */
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
@@ -17,30 +16,27 @@ function adicionar() {
         exibir("pedido/formulario");
     }
 }
-
-/** anon */
+/** user */
 function deletar($id) {
-    alert(deletarProduto($id));
-    redirecionar("produto/index");
+    alert(deletarPedido($id));
+    redirecionar("Pedido/index");
 }
-
-/** anon */
+/** user */
 function editar($id) {
     if (ehPost()) {
         $NomeProd = $_POST["nome"];
         $Descricao = $_POST["descricao"];
         $Preco = $_POST["preco"];
-        alert(editarProduto($id, $NomeProd, $Descricao, $Preco));
-        redirecionar("Produto/index");
+        alert(editarPedido($id, $NomeProd, $Descricao, $Preco));
+        redirecionar("Pedido/index");
     } else {
-        $dados['produto'] = pegarProdutoPorId($id);
-        $dados['acao'] = "./produto/editar/$id";
-        exibir("produto/formulario", $dados);
+        $dados['pedido'] = pegarPedidoPorId($id);
+        $dados['acao'] = "./pedido/editar/$id";
+        exibir("pedido/formulario", $dados);
     }
 }
-/**admin*/
-
+/** user */
 function visualizar($id) {
-    $dados['produto'] = pegarProdutoPorId($id);
-    exibir("produto/visualizar", $dados);
+    $dados['pedido'] = pegarPedidoPorId($id);
+    exibir("pedido/visualizar", $dados);
 }

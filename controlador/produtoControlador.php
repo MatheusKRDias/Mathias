@@ -1,13 +1,11 @@
 <?php
 
 require "modelo/produtoModelo.php";
-
 /** anon */
 function index() {
     $dados["produtos"] = pegarTodosProdutos();
     exibir("produto/listar", $dados);
 }
-
 /** admin */
 function adicionar() {
     if (ehPost()) {
@@ -18,13 +16,11 @@ function adicionar() {
         exibir("produto/formulario");
     }
 }
-
 /** admin */
 function deletar($id) {
     alert(deletarProduto($id));
     redirecionar("produto/index");
 }
-
 /** admin */
 function editar($id) {
     if (ehPost()) {
@@ -39,7 +35,6 @@ function editar($id) {
         exibir("produto/formulario", $dados);
     }
 }
-
 /** anon */
 function visualizar($id) {
     $dados['produto'] = pegarProdutoPorId($id);

@@ -1,30 +1,26 @@
 <?php
 
 require "modelo/usuarioModelo.php";
-
 /** admin */
 function index() {
     $dados["usuarios"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
 }
-
-/** anon */
+/** admin */
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
         alert(adicionarUsuario($nome, $email, $senha));
-        redirecionar("produto/index");
+        redirecionar("usuario/index");
     } else {
         exibir("usuario/formulario");
-    }   
+    }
 }
-
 /** admin */
 function deletar($id) {
     alert(deletarUsuario($id));
     redirecionar("usuario/index");
 }
-
 /** user */
 function editar($id) {
     if (ehPost()) {
@@ -38,8 +34,7 @@ function editar($id) {
         exibir("usuario/formulario", $dados);
     }
 }
-
-/** user */
+/** admin */
 function visualizar($id) {
     $dados['usuario'] = pegarUsuarioPorId($id);
     exibir("usuario/visualizar", $dados);

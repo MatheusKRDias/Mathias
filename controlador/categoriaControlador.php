@@ -6,7 +6,6 @@ function index() {
     $dados["categorias"] = pegarTodasCategorias();
     exibir("categoria/listar", $dados);
 }
-
 /** admin */
 function adicionar() {
     if (ehPost()) {
@@ -17,13 +16,11 @@ function adicionar() {
         exibir("categoria/formulario");
     }
 }
-
 /** admin */
 function deletar($id) {
     alert(deletarCategoria($id));
     redirecionar("categoria/index");
 }
-
 /** admin */
 function editar($id) {
     if (ehPost()) {
@@ -36,8 +33,7 @@ function editar($id) {
         exibir("categoria/formulario", $dados);
     }
 }
-
-/** admin */
+/** anon */
 function visualizar($id) {
     $dados['categoria'] = pegarCategoriaPorId($id);
     exibir("categoria/visualizar", $dados);
