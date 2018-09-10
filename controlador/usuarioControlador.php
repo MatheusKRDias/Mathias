@@ -1,12 +1,12 @@
 <?php
 
 require "modelo/usuarioModelo.php";
-/** admin */
+
 function index() {
     $dados["usuarios"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
 }
-/** admin */
+
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
@@ -16,12 +16,12 @@ function adicionar() {
         exibir("usuario/formulario");
     }
 }
-/** admin */
+
 function deletar($id) {
     alert(deletarUsuario($id));
     redirecionar("usuario/index");
 }
-/** user */
+
 function editar($id) {
     if (ehPost()) {
         $nome = $_POST["nome"];
@@ -34,7 +34,7 @@ function editar($id) {
         exibir("usuario/formulario", $dados);
     }
 }
-/** admin */
+
 function visualizar($id) {
     $dados['usuario'] = pegarUsuarioPorId($id);
     exibir("usuario/visualizar", $dados);
