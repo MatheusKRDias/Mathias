@@ -39,3 +39,22 @@ function deletarProduto($CodProduto) {
     return 'Produto deletado com sucesso!';
             
 }
+
+function pegarVariosProdutosPorId($carrinho){
+    for ($i=0; $i < count($carrinho); $i++) {
+         $id = $carrinho[$i];
+
+          $comando    = "SELECT * FROM produto WHERE CodProduto = '$id'";
+                $query  = mysqli_query($cnx = conn(),$comando); 
+              
+                if(!$query) {
+                    die(mysqli_error($cnx));
+                }
+
+                $produtos[] = mysqli_fetch_assoc($query); 
+            }
+
+            if(!empty($produtos)){
+                return $produtos;
+            }
+        }

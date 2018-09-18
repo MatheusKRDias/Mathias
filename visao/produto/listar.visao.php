@@ -10,6 +10,7 @@
             <th>VIEW</th>
             <th>EDIT</th>
             <th>DELETE</th>
+            <th>ADICIONAR CARRINHO</th>
         </tr>
     </thead>
     <?php foreach ($produtos as $produto): ?>
@@ -21,6 +22,7 @@
         <td><a href="./produto/visualizar/<?=$produto['CodProduto']?>" class="btn btn-secondary">view</a></td>
         <td><a href="./produto/editar/<?=$produto['CodProduto']?>" class="btn btn-info">edit</a></td>
         <td><a href="./produto/deletar/<?=$produto['CodProduto']?>" class="btn btn-danger">del</a></td>
+        <td><a href="./carrinho/adicionar/<?=$produto['CodProduto']?>" class="btn btn-danger">add</a></td>
     </tr>
     <?php endforeach; ?>
 </table>
