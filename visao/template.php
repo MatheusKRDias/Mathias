@@ -1,5 +1,7 @@
 <html>
+    
     <head>
+
         <title>template MVC</title>
         <base href="<?= BASE_URL ?>">
 

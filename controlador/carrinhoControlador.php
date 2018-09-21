@@ -4,10 +4,14 @@
 
 	/** anon */
 	function index(){
+		if (!empty($_SESSION["carrinho"])) {
 		$carrinho = $_SESSION["carrinho"];
 		$dados["carrinho"] = pegarVariosProdutosPorId($carrinho);
 
 		exibir("produto/carrinho",$dados);
+		}else{
+			exibir("produto/carrinho");
+		}
 	}
 
 	/** anon */
@@ -19,7 +23,6 @@
 	/** anon */
 	function deletar($id){
 		unset($_SESSION["carrinho"][$id]);
-		$_SESSION["carrinho"] = array_values($_SESSION["carrinho"]);
 		redirecionar("carrinho/index");
 	}
 

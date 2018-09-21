@@ -42,16 +42,13 @@ function deletarProduto($CodProduto) {
 }
 
 function pegarVariosProdutosPorId($carrinho){
-    print_r($carrinho);
-    print_r($carrinho[2]);
 
-echo "resultado";
-    foreach($_SESSION['carrinho'] as $id){
-print_r($id);
-}
 
-    for ($i=0; $i < count($carrinho); $i++) {
-         $id = $carrinho[$i];
+    
+
+    foreach($_SESSION['carrinho'] as $idt){
+
+         $id = $idt["indice"];
 
           $comando    = "SELECT * FROM produto WHERE CodProduto = '$id'";
                 $query  = mysqli_query($cnx = conn(),$comando); 

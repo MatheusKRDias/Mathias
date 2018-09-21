@@ -1,4 +1,6 @@
-<h2>Acesse o sistema</h2>
+
+    <meta charset="utf-8">
+    <h2>Acesse o sistema</h2>
 
 <form method="POST" action="">
 	

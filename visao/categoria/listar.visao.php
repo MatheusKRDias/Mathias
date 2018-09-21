@@ -1,3 +1,4 @@
+    <meta charset="utf-8">
 <h2>Listar Categorias</h2>
 
 <table class="table">

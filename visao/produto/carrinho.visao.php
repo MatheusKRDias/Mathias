@@ -1,3 +1,4 @@
+    <meta charset="utf-8">
 <h2>Listar Produtos Carrinho</h2>
 
 <table class="table">
@@ -8,13 +9,22 @@
             <th>DELETE</th>
         </tr>
     </thead>
-    <?php foreach ($carrinho as $produto): ?>
+    <?php 
+    if(isset($carrinho)) {
+        foreach ($carrinho as $produto){ 
+    ?>
     <tr>
         <td><?=$produto['CodProduto']?></td>        
         <td><?=$produto['NomeProd']?></td>
         <td><a href="./carrinho/deletar/<?=$produto['CodProduto']?>" class="btn btn-danger">del</a></td>
     </tr>
-    <?php endforeach; ?>
+    <?php 
+        }
+    }else{
+        echo "<h1>Seu carrinho está vazio<h1>";
+    }
+    ?>
+
 </table>
 
 
