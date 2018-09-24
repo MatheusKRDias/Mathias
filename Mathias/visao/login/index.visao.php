@@ -1,4 +1,6 @@
-<h2>Acesse o sistema</h2>
+
+    <meta charset="utf-8">
+    <h2>Acesse o sistema</h2>
 
 <form method="POST" action="">
 	
@@ -13,6 +15,6 @@
 	</div>
 
 	
-	<button type="submit" class="btn btn-primary">vai login</button>
+	<button type="submit" class="btn btn-primary">Logar</button>
 
 </form>

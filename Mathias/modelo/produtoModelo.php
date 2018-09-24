@@ -1,3 +1,4 @@
+
 <?php
 
 function pegarTodosProdutos() {
@@ -39,3 +40,27 @@ function deletarProduto($CodProduto) {
     return 'Produto deletado com sucesso!';
             
 }
+
+function pegarVariosProdutosPorId($carrinho){
+
+
+    
+
+    foreach($_SESSION['carrinho'] as $idt){
+
+         $id = $idt["indice"];
+
+          $comando    = "SELECT * FROM produto WHERE CodProduto = '$id'";
+                $query  = mysqli_query($cnx = conn(),$comando); 
+              
+                if(!$query) {
+                    die(mysqli_error($cnx));
+                }
+
+                $produtos[] = mysqli_fetch_assoc($query); 
+            }
+
+            if(!empty($produtos)){
+                return $produtos;
+            }
+        }

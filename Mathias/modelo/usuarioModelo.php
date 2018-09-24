@@ -1,5 +1,13 @@
 <?php
 
+function logar($nome, $senha) {
+    $sql = "SELECT * FROM usuario WHERE NomeUsuario = '$nome' AND Senha = '$senha'";
+    $resultado = mysqli_query(conn(), $sql);
+    $log = mysqli_fetch_array($resultado);
+    
+    return $log;
+}
+
 function pegarTodosUsuarios() {
     $sql = "SELECT * FROM usuario";
     $resultado = mysqli_query(conn(), $sql);

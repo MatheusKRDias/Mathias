@@ -1,41 +1,41 @@
 <?php
 
-function pegarTodosProdutos() {
-    $sql = "SELECT * FROM produto";
+function pegarTodosPedidos() {
+    $sql = "SELECT * FROM pedido";
     $resultado = mysqli_query(conn(), $sql);
-    $produtos = array();
+    $pedidos = array();
     while ($linha = mysqli_fetch_array($resultado)) {
-        $produtos[] = $linha;
+        $pedidos[] = $linha;
     }
     return $produtos;
 }
 
-function pegarProdutoPorId($CodProduto) {
-    $sql = "SELECT * FROM produto WHERE CodProduto= $CodProduto";
+function pegarPedidoPorId($CodProduto) {
+    $sql = "SELECT * FROM pedido WHERE CodPedido= $CodPedido";
     $resultado = mysqli_query(conn(), $sql);
-    $produto = mysqli_fetch_array($resultado);
+    $pedido = mysqli_fetch_array($resultado);
     return $produto;
 }
 
-function adicionarProduto($NomeProd, $Descricao, $Preco) {
-    $sql = "INSERT INTO produto (Preco, NomeProd, Descricao) 
+function adicionarPedido($NomeProd, $Descricao, $Preco) {
+    $sql = "INSERT INTO pedido (Preco, NomeProd, Quantpedido) 
             VALUES ('$Preco', '$NomeProd', '$Descricao');";
     $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao cadastrar produto' . mysqli_error($cnx)); }
-    return 'Produto cadastrado com sucesso!';
+    if(!$resultado) { die('Erro ao cadastrar pedido' . mysqli_error($cnx)); }
+    return 'Pedido cadastrado com sucesso!';
 }
 
-function editarProduto($CodProduto, $NomeProd, $Descricao, $Preco) {
-    $sql = "UPDATE produto SET NomeProd = '$NomeProd', Descricao = '$Descricao', Preco = '$Preco' WHERE CodProduto = $CodProduto";
+function editarPedido($CodProduto, $NomeProd, $Descricao, $Preco) {
+    $sql = "UPDATE pedido SET NomeProd = '$NomeProd', Descricao = '$Descricao', Preco = '$Preco' WHERE CodPedido = $CodPedido";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao alterar usuário' . mysqli_error($cnx)); }
-    return 'Produto alterado com sucesso!';
+    return 'Pedido alterado com sucesso!';
 }
 
-function deletarProduto($CodProduto) {
-    $sql = "DELETE FROM produto WHERE CodProduto = $CodProduto";
+function deletarPedido($CodProduto) {
+    $sql = "DELETE FROM pedido WHERE CodPedido = $CodPedido";
     $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao deletar Produto' . mysqli_error($cnx)); }
-    return 'Produto deletado com sucesso!';
+    if(!$resultado) { die('Erro ao deletar Pedido' . mysqli_error($cnx)); }
+    return 'Pedido deletado com sucesso!';
             
 }

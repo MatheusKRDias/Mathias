@@ -11,7 +11,7 @@ function pegarTodasCategorias() {
 }
 
 function pegarCategoriaPorId($CodCategoria) {
-    $sql = "SELECT * FROM categoria WHERE CodCategoria= $CodCategoria";
+    $sql = "SELECT * FROM categoria WHERE CodCategoria = $CodCategoria";
     $resultado = mysqli_query(conn(), $sql);
     $categoria = mysqli_fetch_array($resultado);
     return $categoria;

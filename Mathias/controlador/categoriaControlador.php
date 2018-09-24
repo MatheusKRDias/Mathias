@@ -1,12 +1,12 @@
 <?php
 
 require "modelo/categoriaModelo.php";
-
+/** anon */
 function index() {
     $dados["categorias"] = pegarTodasCategorias();
     exibir("categoria/listar", $dados);
 }
-
+/** admin */
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
@@ -16,12 +16,12 @@ function adicionar() {
         exibir("categoria/formulario");
     }
 }
-
+/** admin */
 function deletar($id) {
     alert(deletarCategoria($id));
     redirecionar("categoria/index");
 }
-
+/** admin */
 function editar($id) {
     if (ehPost()) {
         extract($_POST);
@@ -33,7 +33,7 @@ function editar($id) {
         exibir("categoria/formulario", $dados);
     }
 }
-
+/** anon */
 function visualizar($id) {
     $dados['categoria'] = pegarCategoriaPorId($id);
     exibir("categoria/visualizar", $dados);
