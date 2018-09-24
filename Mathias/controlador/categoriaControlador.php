@@ -21,20 +21,3 @@ function deletar($id) {
     alert(deletarCategoria($id));
     redirecionar("categoria/index");
 }
-/** admin */
-function editar($id) {
-    if (ehPost()) {
-        extract($_POST);
-        alert(editarCategoria($nome, $id));
-        redirecionar("categoria/index");
-    } else {
-        $dados['categoria'] = pegarCategoriaPorId($id);
-        $dados['acao'] = "./categoria/editar/$id";
-        exibir("categoria/formulario", $dados);
-    }
-}
-/** anon */
-function visualizar($id) {
-    $dados['categoria'] = pegarCategoriaPorId($id);
-    exibir("categoria/visualizar", $dados);
-}

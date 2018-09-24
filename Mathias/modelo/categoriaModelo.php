@@ -10,12 +10,6 @@ function pegarTodasCategorias() {
     return $categorias;
 }
 
-function pegarCategoriaPorId($CodCategoria) {
-    $sql = "SELECT * FROM categoria WHERE CodCategoria = $CodCategoria";
-    $resultado = mysqli_query(conn(), $sql);
-    $categoria = mysqli_fetch_array($resultado);
-    return $categoria;
-}
 
 function adicionarCategoria($NomeCategoria) {
     $sql = "INSERT INTO categoria (NomeCategoria) 
@@ -23,13 +17,6 @@ function adicionarCategoria($NomeCategoria) {
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar categoria' . mysqli_error($cnx)); }
     return 'Categoria cadastrado com sucesso!';
-}
-
-function editarCategoria($NomeCategoria, $CodCategoria) {
-    $sql = "UPDATE categoria SET NomeCategoria = '$NomeCategoria' WHERE CodCategoria = $CodCategoria";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao alterar Categoria' . mysqli_error($cnx)); }
-    return 'Categoria alterado com sucesso!';
 }
 
 function deletarCategoria($CodCategoria) {

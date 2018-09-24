@@ -6,8 +6,6 @@
         <tr>
             <th>CODCATEGORIA</th>
             <th>CATEGORIA</th>
-            <th>VIEW</th>
-            <th>EDIT</th>
             <th>DELETE</th>
         </tr>
     </thead>
@@ -16,8 +14,6 @@
         <td><?=$categoria['CodCategoria']?></td>
         <td><?=$categoria['NomeCategoria']?></td>
         
-        <td><a href="./categoria/visualizar/<?=$categoria['CodCategoria']?>" class="btn btn-secondary">view</a></td>
-        <td><a href="./categoria/editar/<?=$categoria['CodCategoria']?>" class="btn btn-info">edit</a></td>
         <td><a href="./categoria/deletar/<?=$categoria['CodCategoria']?>" class="btn btn-danger">del</a></td>
     </tr>
     <?php endforeach; ?>

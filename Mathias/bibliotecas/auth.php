@@ -1,22 +1,17 @@
 <?php
-require_once("modelo/usuarioModelo.php");
 
 define('AUTENTICADOR', true);
 
-
-
 function authLogin($login, $passwd) {
-   $log = logar($login, $passwd);
-
-   if (!empty($log)) {
-        $_SESSION["auth"] = array(
-            "user" => $log["TipoUsuario"], 
-            "role" => $log["TipoUsuario"]
-            "nome" => $log["NomeUsuario"]);
-        return true;   
-   }else{
-       return false;
-   }
+    if ($login === "admin" && $passwd == "123") {
+        $_SESSION["auth"] = array("user" => "admin", "role" => "admin");
+        return true;
+    }
+    if ($login === "user" && $passwd == "123") {
+        $_SESSION["auth"] = array("user" => "user", "role" => "user");
+        return true;
+    }
+    return false;
 }
 
 function authIsLoggedIn() {

@@ -15,6 +15,6 @@
 	</div>
 
 	
-	<button type="submit" class="btn btn-primary">Logar</button>
+	<button type="submit" class="btn btn-primary">vai login</button>
 
 </form>

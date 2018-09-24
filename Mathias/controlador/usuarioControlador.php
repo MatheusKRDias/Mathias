@@ -6,7 +6,7 @@ function index() {
     $dados["usuarios"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
 }
-/** anon */
+/** admin */
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
