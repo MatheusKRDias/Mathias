@@ -1,12 +1,17 @@
 <?php
 
-require "modelo/usuarioModelo.php";
-/** admin */
+require_once "modelo/usuarioModelo.php";
+/** user */
 function index() {
-    $dados["usuarios"] = pegarTodosUsuarios();
+     exibir("usuario/formulario");
+}
+
+/** user */
+function listar($id) {
+    $dados["usuario"] = pegarUsuarioPorId($id);
     exibir("usuario/listar", $dados);
 }
-/** admin */
+/** anon */
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
@@ -16,7 +21,7 @@ function adicionar() {
         exibir("usuario/formulario");
     }
 }
-/** admin */
+/** user */
 function deletar($id) {
     alert(deletarUsuario($id));
     redirecionar("usuario/index");
@@ -34,7 +39,7 @@ function editar($id) {
         exibir("usuario/formulario", $dados);
     }
 }
-/** admin */
+/** user */
 function visualizar($id) {
     $dados['usuario'] = pegarUsuarioPorId($id);
     exibir("usuario/visualizar", $dados);

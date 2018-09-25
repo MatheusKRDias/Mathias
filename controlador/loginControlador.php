@@ -8,7 +8,7 @@ function index() {
 
         if (authLogin($login, $passwd)) {
             alert("bem vindo" . $login);
-            redirecionar("usuario");
+            redirecionar("produto");
         } else {
             alert("usuario ou senha invalidos!");
         }
