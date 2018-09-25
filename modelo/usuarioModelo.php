@@ -1,5 +1,13 @@
 <?php
 
+function logar($nome, $senha) {
+    $sql = "SELECT * FROM usuario WHERE NomeUsuario = '$nome' AND Senha = '$senha'";
+    $resultado = mysqli_query(conn(), $sql);
+    $log = mysqli_fetch_array($resultado);
+    
+    return $log;
+}
+
 function pegarTodosUsuarios() {
     $sql = "SELECT * FROM usuario";
     $resultado = mysqli_query(conn(), $sql);
@@ -11,15 +19,15 @@ function pegarTodosUsuarios() {
 }
 
 function pegarUsuarioPorId($id) {
-    $sql = "SELECT * FROM usuario WHERE IdUsuario= $id";
+    $sql = "SELECT * FROM usuario WHERE IdUsuario = $id";
     $resultado = mysqli_query(conn(), $sql);
     $usuario = mysqli_fetch_array($resultado);
     return $usuario;
 }
 
 function adicionarUsuario($nome, $email, $senha) {
-    $sql = "INSERT INTO usuario (nomeusuario, email, senha) 
-			VALUES ('$nome', '$email', '$senha')";
+    $sql = "INSERT INTO usuario (nomeusuario, email, senha, tipoUsuario) 
+			VALUES ('$nome', '$email', '$senha', 'user')";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar usuário' . mysqli_error($cnx)); }
     return 'Usuario cadastrado com sucesso!';

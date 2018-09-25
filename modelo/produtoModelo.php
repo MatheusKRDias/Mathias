@@ -12,7 +12,7 @@ function pegarTodosProdutos() {
 }
 
 function pegarProdutoPorId($CodProduto) {
-    $sql = "SELECT * FROM produto WHERE CodProduto= $CodProduto";
+    $sql = "SELECT * FROM produto WHERE CodProduto = $CodProduto";
     $resultado = mysqli_query(conn(), $sql);
     $produto = mysqli_fetch_array($resultado);
     return $produto;
