@@ -1,4 +1,4 @@
-    <meta charset="utf-8">s
+    <meta charset="utf-8">
 <form action="<?=@$acao?>" method="POST">
     Nome: <input type="text" name="nome" value="<?=@$produto['NomeProd']?>">
     Descrição: <input type="text" name="descricao" value="<?=@$produto['Descricao']?>">

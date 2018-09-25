@@ -11,7 +11,6 @@
             <th>DELETE</th>
         </tr>
     </thead>
-    <?php foreach ($usuarios as $usuario): ?>
     <tr>
         <td><?=$usuario['IdUsuario']?></td>
         <td><?=$usuario['NomeUsuario']?></td>
@@ -20,7 +19,6 @@
         <td><a href="./usuario/editar/<?=$usuario['IdUsuario']?>" class="btn btn-info">edit</a></td>
         <td><a href="./usuario/deletar/<?=$usuario['IdUsuario']?>" class="btn btn-danger">del</a></td>
     </tr>
-    <?php endforeach; ?>
 </table>
 
 
