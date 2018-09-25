@@ -16,9 +16,9 @@
 
 	/** anon */
 	function adicionar($id){
-		addCarrinho($id);
+	addCarrinho($id);
 		exibir("produto/index");
-	}
+	}	
 
 	/** anon */
 	function deletar($id){
@@ -27,3 +27,5 @@
 	}
 
 ?>
+
+
