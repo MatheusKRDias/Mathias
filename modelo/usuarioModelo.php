@@ -6,6 +6,8 @@ function logar($nome, $senha) {
     $log = mysqli_fetch_array($resultado);
     
     return $log;
+
+    
 }
 
 function pegarTodosUsuarios() {

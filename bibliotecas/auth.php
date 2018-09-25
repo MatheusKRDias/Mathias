@@ -11,8 +11,8 @@ function authLogin($login, $passwd) {
    if (!empty($log)) {
         $_SESSION["auth"] = array(
             "id" => $log["IdUsuario"],
-            "user" => $log["tipoUsuario"], 
-            "role" => $log["tipoUsuario"],
+            "user" => $log["TipoUsuario"], 
+            "role" => $log["TipoUsuario"],
             "nome" => $log["NomeUsuario"]);
         return true;   
    }else{

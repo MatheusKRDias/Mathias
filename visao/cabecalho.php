@@ -20,6 +20,8 @@
     <li><a href="./login">Login</a></li>
     <?php } ?>
  
+    <?php if (!isset($_SESSION["auth"])) { ?>
     <li><a href="./usuario/adicionar">Cadastre-se</a></li>
+    <?php } ?>
   </ul>
 </nav>
